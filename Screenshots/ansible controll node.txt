@@ -1,0 +1,230 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\Dell> ssh -i "jayasree.pem" ubuntu@ec2-13-51-158-132.eu-north-1.compute.amazonaws.com
+Warning: Identity file jayasree.pem not accessible: No such file or directory.
+The authenticity of host 'ec2-13-51-158-132.eu-north-1.compute.amazonaws.com (13.51.158.132)' can't be established.
+ECDSA key fingerprint is SHA256:afl24sbqkUmxgXwrofYksi7IEsqnYrY5sl3YJwlVXAM.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-13-51-158-132.eu-north-1.compute.amazonaws.com,13.51.158.132' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.19.0-1025-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat May 27 07:47:25 UTC 2023
+
+  System load:  0.3046875         Processes:             108
+  Usage of /:   20.6% of 7.57GB   Users logged in:       0
+  Memory usage: 22%               IPv4 address for ens5: 172.31.47.34
+  Swap usage:   0%
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-47-34:~$ sudo apt update
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Hit:2 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy InRelease
+Get:3 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Get:4 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-backports InRelease [108 kB]
+Get:5 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [403 kB]
+Get:7 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [114 kB]
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [9880 B]
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [279 kB]
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [40.8 kB]
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [723 kB]
+Get:12 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [127 kB]
+Get:13 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [14.7 kB]
+Get:14 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [30.2 kB]
+Get:15 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [5828 B]
+Get:16 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [252 B]
+Get:17 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
+Get:18 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
+Get:19 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
+Get:20 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
+Get:21 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
+Get:22 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [618 kB]
+Get:23 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [173 kB]
+Get:24 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [14.6 kB]
+Get:25 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [279 kB]
+Get:26 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [41.2 kB]
+Get:27 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [902 kB]
+Get:28 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [186 kB]
+Get:29 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [19.0 kB]
+Get:30 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [35.3 kB]
+Get:31 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [8452 B]
+Get:32 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [468 B]
+Get:33 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [40.9 kB]
+Get:34 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [10.2 kB]
+Get:35 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [388 B]
+Get:36 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:37 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [23.4 kB]
+Get:38 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [15.0 kB]
+Get:39 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [548 B]
+Get:40 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B]
+Fetched 24.8 MB in 4s (5794 kB/s)
+Building dependency tree... Done
+Reading state information... Done
+21 packages can be upgraded. Run 'apt list --upgradable' to see them.
+ubuntu@ip-172-31-47-34:~$ sudo vi /etc/ssh/sshd_config
+ubuntu@ip-172-31-47-34:~$ restart sudo service sshd
+Command 'restart' not found, did you mean:
+  command 'rstart' from deb x11-session-utils (7.7+4build2)
+  command 'restartd' from deb restartd (0.2.3-1.1)
+ubuntu@ip-172-31-47-34:~$ sudo service sshd restart
+ubuntu@ip-172-31-47-34:~$ sudo adduser devops
+Adding user `devops' ...
+Adding new group `devops' (1001) ...
+Adding new user `devops' (1001) with group `devops' ...
+Creating home directory `/home/devops' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for devops
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+
+
+ubuntu@ip-172-31-47-34:~$ ssh devops 13.51.158.132
+ssh: Could not resolve hostname devops: Temporary failure in name resolution
+ubuntu@ip-172-31-47-34:~$ exit
+logout
+Connection to ec2-13-51-158-132.eu-north-1.compute.amazonaws.com closed.
+PS C:\Users\Dell> devops@13.51.158.132
+devops@13.51.158.132 : The term 'devops@13.51.158.132' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ devops@13.51.158.132
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (devops@13.51.158.132:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Dell> ssh devops@13.51.158.132
+devops@13.51.158.132's password:
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.19.0-1025-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat May 27 08:10:55 UTC 2023
+
+  System load:  0.0               Processes:             103
+  Usage of /:   23.2% of 7.57GB   Users logged in:       0
+  Memory usage: 24%               IPv4 address for ens5: 172.31.47.34
+  Swap usage:   0%
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+21 updates can be applied immediately.
+13 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+devops@ip-172-31-47-34:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/devops/.ssh/id_rsa):
+Created directory '/home/devops/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/devops/.ssh/id_rsa
+Your public key has been saved in /home/devops/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:htoiSo/uphazE9YdTnrdprXWKA12i4lHhvRGeblJmsw devops@ip-172-31-47-34
+The key's randomart image is:
++---[RSA 3072]----+
+|                 |
+|                 |
+|        . .      |
+|     + + +       |
+|  . * X S o      |
+| = o B E B       |
+|..* + B X =      |
+|.*o. o * * .     |
+|O+..  . o        |
++----[SHA256]-----+
+devops@ip-172-31-47-34:~$ ssh-copy-id devops@16.170.250.68
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/devops/.ssh/id_rsa.pub"
+The authenticity of host '16.170.250.68 (16.170.250.68)' can't be established.
+ED25519 key fingerprint is SHA256:URtv93UYG4uDlfjyoIY+ENBmXAolo8LaQW7AbD5oO4s.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+devops@16.170.250.68's password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'devops@16.170.250.68'"
+and check to make sure that only the key(s) you wanted were added.
+
+devops@ip-172-31-47-34:~$ ssh 16.170.250.68
+Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.19.0-1025-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat May 27 08:13:33 UTC 2023
+
+  System load:  0.01220703125     Processes:             108
+  Usage of /:   23.2% of 7.57GB   Users logged in:       1
+  Memory usage: 24%               IPv4 address for ens5: 172.31.40.37
+  Swap usage:   0%
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+19 updates can be applied immediately.
+13 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Sat May 27 08:11:50 2023 from 183.82.7.223
+devops@ip-172-31-40-37:~$ vi host
+devops@ip-172-31-40-37:~$ Connection to 13.51.158.132 closed by remote host.
+Connection to 13.51.158.132 closed.
+PS C:\Users\Dell>
